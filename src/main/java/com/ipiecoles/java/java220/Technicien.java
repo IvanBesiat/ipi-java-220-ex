@@ -19,6 +19,7 @@ public class Technicien extends Employe implements Comparable<Technicien>{
         super.setSalaire(newSalaire *(1+ (double) grade / 10));
     }
 
+    // constructeurs
     public Technicien(){
 
     }
@@ -28,6 +29,7 @@ public class Technicien extends Employe implements Comparable<Technicien>{
         this.grade = newGrade;
     }
 
+    // methodes
     public Integer getNbConges(){
         try {
             return super.getNbConges()+ this.getNombreAnneeAnciennete();
