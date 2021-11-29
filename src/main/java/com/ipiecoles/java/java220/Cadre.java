@@ -33,7 +33,8 @@ public class Cadre extends Employe{
 
     @Override
     public Integer getNbConges(){
-        return Entreprise.NB_CONGES_BASE + coefficient.intValue();
+        Double nbConges = Math.ceil(Entreprise.NB_CONGES_BASE + coefficient);
+        return nbConges.intValue();
     }
 
     @Override
