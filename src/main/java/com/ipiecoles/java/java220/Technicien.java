@@ -19,6 +19,7 @@ public class Technicien extends Employe implements Comparable<Technicien>{
         super.setSalaire(newSalaire *(1+ (double) grade / 10));
     }
 
+    // constructeurs
     public Technicien(){
 
     }
@@ -28,6 +29,7 @@ public class Technicien extends Employe implements Comparable<Technicien>{
         this.grade = newGrade;
     }
 
+    // methodes
     public Integer getNbConges(){
         try {
             return super.getNbConges()+ this.getNombreAnneeAnciennete();
@@ -55,5 +57,20 @@ public class Technicien extends Employe implements Comparable<Technicien>{
     public int hashCode() {
         int employeHash = super.hashCode();
         return Objects.hash(employeHash, this.grade);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Technicien{");
+        sb.append("nom='").append(super.getNom()).append('\'');
+        sb.append(", prenom='").append(super.getPrenom()).append('\'');
+        sb.append(", matricule='").append(super.getMatricule()).append('\'');
+        sb.append(", dateEmbauche=").append(super.getDateEmbauche());
+        sb.append(", salaire=").append(super.getSalaire());
+        sb.append(", tempsPartiel=").append(super.getTempsPartiel());
+        sb.append(", sexe=").append(super.getSexe());
+        sb.append(", grade=").append(grade);
+        sb.append('}');
+        return sb.toString();
     }
 }
